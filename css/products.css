@@ -1,0 +1,232 @@
+/* 产品页面样式 */
+.page-hero {
+  background: var(--gradient-dark);
+  padding: var(--space-xxxl) 0 var(--space-xxl);
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-md);
+}
+
+.page-hero p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+.tab-nav {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xxl);
+  border-bottom: 2px solid var(--color-bg-hover);
+  justify-content: center;
+}
+
+.tab-item {
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.tab-item.active {
+  color: var(--color-primary);
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  align-items: center;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.product-info h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.product-desc {
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+  color: var(--color-text-secondary);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-top: var(--space-md);
+}
+
+.section-title svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.section-title h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-tagline {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);    /* 从24px(md)改为32px(lg) */
+  color: var(--color-text-secondary);
+  line-height: 1.8;                   /* 从1.6提升到1.8 */
+}
+
+.feature-list svg {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.product-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.hardware-card {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.hardware-card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+.hardware-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.hardware-card ul {
+  margin-top: var(--space-md);
+}
+
+.hardware-card li {
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.hardware-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.scenario-item {
+  display: flex;
+  gap: var(--space-lg);
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.scenario-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.scenario-stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xxs);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1199px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+  .hardware-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-nav {
+    flex-direction: column;
+  }
+  .hardware-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-actions {
+    flex-direction: column;
+  }
+  .scenario-item {
+    flex-direction: column;
+  }
+  .scenario-stats {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+}

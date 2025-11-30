@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="体验睿来智能体产品 - 矿山AI智能体在线演示">
+  <title>产品体验 | 睿来智能体</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.reliableagent.cn/demo.html">
+  <meta property="og:title" content="产品体验 | 睿来智能体">
+  <meta property="og:description" content="体验睿来智能体产品 - 矿山AI智能体在线演示">
+  <meta property="og:image" content="https://www.reliableagent.cn/images/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.reliableagent.cn/demo.html">
+  <meta name="twitter:title" content="产品体验 | 睿来智能体">
+  <meta name="twitter:description" content="体验睿来智能体产品 - 矿山AI智能体在线演示">
+  <meta name="twitter:image" content="https://www.reliableagent.cn/images/og-image.jpg">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-logo">
+        <img src="images/logo.png" alt="睿来智能体" width="40" height="40">
+        <span>睿来智能体</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品与解决方案</a>
+        <a href="news.html">新闻中心</a>
+        <a href="about.html">关于我们</a>
+        <a href="careers.html">加入我们</a>
+        <div class="header-cta">
+          <a href="contact.html" class="btn btn-primary-md">联系/试用</a>
+        </div>
+      </nav>
+      <div class="menu-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="scroll-animate">产品体验区</h1>
+      <p class="scroll-animate">在线体验睿来智能体的核心AI能力</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="demo-container">
+        <div class="demo-sidebar">
+          <h3>功能选择</h3>
+          <button class="demo-tab active" data-demo="vision">视觉识别Demo</button>
+          <button class="demo-tab" data-demo="voice">语音交互Demo</button>
+          <button class="demo-tab" data-demo="roi">ROI计算器</button>
+        </div>
+
+        <div class="demo-main">
+          <div class="demo-panel active" id="demo-vision">
+            <h2>AI视觉识别演示</h2>
+            <p class="demo-desc">上传矿山作业图片,实时识别安全隐患</p>
+            <div class="demo-upload">
+              <div class="upload-area">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                </svg>
+                <p>拖拽图片到这里或点击上传</p>
+                <input type="file" accept="image/*" style="display:none;">
+              </div>
+              <div class="demo-result" style="display:none;">
+                <img src="" alt="预览">
+                <div class="result-info">
+                  <h4>识别结果</h4>
+                  <ul>
+                    <li>✓ 检测到1人未佩戴安全帽</li>
+                    <li>✓ 检测到危险区域越界</li>
+                    <li>✓ 检测到2处设备异常</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="demo-voice" style="display:none;">
+            <h2>语音交互演示</h2>
+            <p class="demo-desc">体验AI语音助手的智能问答能力</p>
+            <div class="voice-demo">
+              <div class="voice-input">
+                <input type="text" placeholder="输入您的问题,例如:如何正确佩戴安全带?" class="voice-query">
+                <button class="btn btn-primary-md">发送</button>
+              </div>
+              <div class="voice-response">
+                <p class="response-text">AI助手: 您好!我是睿来智能体,请问有什么可以帮您?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="demo-roi" style="display:none;">
+            <h2>ROI投资回报计算器</h2>
+            <p class="demo-desc">计算引入睿来系统后的经济效益</p>
+            <div class="roi-calculator">
+              <div class="calc-input">
+                <label>矿井年产量(万吨):</label>
+                <input type="number" id="output" value="300">
+              </div>
+              <div class="calc-input">
+                <label>矿工数量(人):</label>
+                <input type="number" id="workers" value="1000">
+              </div>
+              <div class="calc-input">
+                <label>年度安全事故次数:</label>
+                <input type="number" id="accidents" value="5">
+              </div>
+              <button class="btn btn-primary-md" onclick="calculateROI()">计算ROI</button>
+              <div class="roi-result" style="display:none;">
+                <h4>预计年度收益</h4>
+                <div class="roi-stats">
+                  <div class="roi-stat">
+                    <span class="roi-value">320万元</span>
+                    <span class="roi-label">事故成本降低</span>
+                  </div>
+                  <div class="roi-stat">
+                    <span class="roi-value">150万元</span>
+                    <span class="roi-label">人力成本节约</span>
+                  </div>
+                  <div class="roi-stat">
+                    <span class="roi-value">6个月</span>
+                    <span class="roi-label">投资回收期</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h3>睿来智能体</h3>
+          <p>用大模型驱动的AI提升矿工安全与幸福感</p>
+        </div>
+        <div class="footer-links">
+          <h4>快速链接</h4>
+          <ul><li><a href="index.html">首页</a></li><li><a href="products.html">产品</a></li></ul>
+        </div>
+        <div class="footer-links">
+          <h4>联系我们</h4>
+          <ul><li>邮箱: contact@reliableagent.cn</li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 北京睿来智能体技术有限公司</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/demo.js"></script>
+</body>
+</html>

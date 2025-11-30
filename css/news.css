@@ -1,0 +1,65 @@
+/* 新闻页面样式 */
+.news-list {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.news-card {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  display: flex;
+  gap: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.news-card img {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.news-content {
+  padding: var(--space-lg);
+  flex: 1;
+}
+
+.news-tag {
+  margin-bottom: var(--space-sm);
+}
+
+.news-card h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-white);
+}
+
+.news-card p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+}
+
+.news-meta {
+  display: flex;
+  gap: var(--space-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-disabled);
+}
+
+@media (max-width: 767px) {
+  .news-card {
+    flex-direction: column;
+  }
+  .news-card img {
+    width: 100%;
+  }
+}
