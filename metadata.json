@@ -1,0 +1,8 @@
+{
+  "name": "睿来智能体 (Reliable Agent)",
+  "description": "A decision-support intelligent assistant for coal mine management, integrating AI chat, knowledge graphs, and real-time data monitoring.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
